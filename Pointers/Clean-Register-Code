@@ -6,7 +6,7 @@ int main() {
     int NParticipants;
  
     cout << " Please enter the number of participants: ";
-    cin >> numParticipants;
+    cin >> NParticipants;
 
     int *attendance = (int*)calloc(NParticipants, sizeof(int));
 
