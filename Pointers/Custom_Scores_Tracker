@@ -6,7 +6,7 @@ int main() {
 	
 	cout <<"Welcome! Custom-Score-Tracker"<< endl;
 	
-	int NumPlayers;
+	int NPlayers;
 	
 	cout <<"Enter the number of Players:";
 	cin >> NPlayers;
