@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+	
+	cout <<"Welcome! Custom-Score-Tracker"<< endl;
+	
+	int NumPlayers;
+	
+	cout <<"Enter the number of Players:";
+	cin >> NPlayers;
+	
+	int *ptrScore =(int*)malloc(NPlayers * sizeof(int));
+	
+	if(ptrScore==NULL)
+	{
+		cout <<"Space Allocation Failed!" << endl;
+	}
+	
+	for(int i=0; i<NPlayers; i++)
+	{
+		cout <<"Enter the score of player " << i + 1 << ": " ;
+		cin >>ptrScore[i];
+	}
+	
+	cout <<"SCORES" << endl;
+	for(int i=0; i<NPlayers; i++)
+	{
+		cout <<"The Player" << i + 1 << " Score: "<< ptrScore[i] << endl;
+	}
+	
+	free(ptrScore);
+	
+	return 0;
+}
