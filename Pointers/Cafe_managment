@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+int main(){
+	
+    int Esspero=250;
+    int *ptrE=&Esspero;
+    
+    int latte=170;
+    int *ptrL=&latte;
+    
+    int cappuccino=200;
+    int *ptrC=&cappuccino;
+    
+	int QE=0,QL=0,QC=0;
+	int *ptrQE=&QE;
+	int *ptrQL=&QL;
+	int *ptrQC=&QC;
+	
+	cout<<"enter amount of  Esspero=";
+	cin>>*ptrQE;
+	cout<<"enter amount of  latte=";
+	cin>>*ptrQL;
+	cout<<"enter amount of   cappuccino=";
+	cin>>*ptrQC;
+
+	// calculation//
+	int total =0;
+	total=((*ptrQE) * (*ptrE))+((*ptrQL) * (*ptrL))+((*ptrQC) * (*ptrC));
+	cout<<"amount of  Esspero "<<*ptrE<<endl;
+	cout<<"amount of  latte "<<*ptrL<<endl;
+	cout<<"amount of  cappuccino "<<*ptrC<<endl;
+	cout<<"Total bill is :"<<total;
+	
+	
+ 
+
+	return 0;
+}
