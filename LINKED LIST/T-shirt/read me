@@ -1,0 +1,3 @@
+
+Linked list implenentoin:
+Head → [Student1] → [Student2] → [Student3] → ... → [StudentN] → nullptr
