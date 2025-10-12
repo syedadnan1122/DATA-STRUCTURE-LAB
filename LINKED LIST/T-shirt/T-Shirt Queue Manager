@@ -1,0 +1,237 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Node {
+    string Name;
+    int Sid;
+    Node* next;
+    
+    Node(string n, int id) {
+        Sid = id;
+        Name = n;
+        next = nullptr;
+    }
+};
+
+class Tevent {
+private:
+    Node* head;
+    int tshirtCount;
+    int maxTshirts;
+    
+public:
+    Tevent() {
+        head = nullptr;
+        tshirtCount = 0;
+        maxTshirts = 10;
+    }
+    
+    ~Tevent() {
+        while (head != nullptr) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+    
+    void addStudent(string n, int id) {
+        Node* newNode = new Node(n, id);
+        Node* curr;
+        
+        if (head == nullptr) {
+            head = newNode;
+        } else {
+            curr = head;
+            while (curr->next != nullptr) {
+                curr = curr->next;
+            }
+            curr->next = newNode;
+        }
+        
+        cout << "Name = " << n << endl;
+        cout << "ID = " << id << endl;
+        cout << "ADDED to queue" << endl;
+    }
+    
+    bool serveStudent(string* removedName, int* removedID) {
+        if (head == nullptr) {
+            return false;
+        }
+        
+        if (tshirtCount >= maxTshirts) {
+            cout << "\nAll 10 T-shirts have been distributed! No more T-shirts available." << endl;
+            return false;
+        }
+        
+        Node* temp = head;
+        head = head->next;
+        
+        if (removedName != nullptr) {
+            *removedName = temp->Name;
+        }
+        if (removedID != nullptr) {
+            *removedID = temp->Sid;
+        }
+        
+        tshirtCount++;
+        delete temp;
+        return true;
+    }
+    
+    bool removeStudent(int id) {
+        if (head == nullptr) {
+            return false;
+        }
+        
+        if (head->Sid == id) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+            return true;
+        }
+        
+        Node* curr = head;
+        while (curr->next != nullptr) {
+            if (curr->next->Sid == id) {
+                Node* temp = curr->next;
+                curr->next = temp->next;
+                delete temp;
+                return true;
+            }
+            curr = curr->next;
+        }
+        
+        return false;
+    }
+    
+    void display() const {
+        if (head == nullptr) {
+            cout << "Queue is empty!" << endl;
+            return;
+        }
+        
+        Node* curr = head;
+        cout << "\nCurrent Queue:" << endl;
+        int position = 1;
+        while (curr != nullptr) {
+            cout << position << ". " << curr->Name << " (ID: " << curr->Sid << ")" << endl;
+            curr = curr->next;
+            position++;
+        }
+        cout << endl;
+    }
+    
+    int countStudents() const {
+        int count = 0;
+        Node* curr = head;
+        while (curr != nullptr) {
+            count++;
+            curr = curr->next;
+        }
+        return count;
+    }
+    
+    int getTshirtCount() const {
+        return tshirtCount;
+    }
+    
+    int getRemainingTshirts() const {
+        return maxTshirts - tshirtCount;
+    }
+};
+
+void displayMenu() {
+    cout << "\n=== Code-a-Thon T-Shirt Queue Manager ===" << endl;
+    cout << "1. Add Student" << endl;
+    cout << "2. Serve Student" << endl;
+    cout << "3. Student Leaves" << endl;
+    cout << "4. Display Queue" << endl;
+    cout << "5. Count Students" << endl;
+    cout << "6. Exit" << endl;
+    cout << "Enter your choice: ";
+}
+
+int main() {
+    Tevent queue;
+    int choice;
+    
+    while (true) {
+        displayMenu();
+        cin >> choice;
+        
+        switch (choice) {
+            case 1: {
+                string name;
+                int studentID;
+                
+                cout << "Enter student name: ";
+                cin.ignore();
+                getline(cin, name);
+                
+                cout << "Enter student ID: ";
+                cin >> studentID;
+                
+                queue.addStudent(name, studentID);
+                break;
+            }
+            
+            case 2: {
+                string removedName;
+                int removedID;
+                
+                if (queue.serveStudent(&removedName, &removedID)) {
+                    cout << "\nServing: " << removedName << " (ID: " << removedID << ")" << endl;
+                    cout << "T-shirt distributed successfully!" << endl;
+                } else {
+                    cout << "Queue is empty! No students to serve." << endl;
+                }
+                break;
+            }
+            
+            case 3: {
+                int studentID;
+                
+                cout << "Enter student ID to remove: ";
+                cin >> studentID;
+                
+                if (queue.removeStudent(studentID)) {
+                    cout << "Student removed from queue." << endl;
+                } else {
+                    cout << "Student not found in queue." << endl;
+                }
+                break;
+            }
+            
+            case 4: {
+                queue.display();
+                break;
+            }
+            
+            case 5: {
+                int count = queue.countStudents();
+                int distributed = queue.getTshirtCount();
+                int remaining = queue.getRemainingTshirts();
+                
+                cout << "\n=== Queue Statistics ===" << endl;
+                cout << "Total students in queue: " << count << endl;
+                cout << "T-shirts distributed: " << distributed << "/10" << endl;
+                cout << "T-shirts remaining: " << remaining << endl;
+                break;
+            }
+            
+            case 6: {
+                cout << "Exiting..." << endl;
+                return 0;
+            }
+            
+            default: {
+                cout << "Invalid choice! Please try again." << endl;
+            }
+        }
+    }
+    
+    return 0;
+}
+
+
