@@ -1,0 +1,107 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+class Node {
+public:
+    string ip;
+    Node* next;
+    Node* prev;
+
+    Node(string val) {
+        ip = val;
+        next = nullptr;
+        prev = nullptr;
+    }
+};
+
+class DoubleLL {
+public:
+    Node* head;
+    Node* tail;
+
+    DoubleLL() {
+        head = nullptr;
+        tail = nullptr;
+    }
+
+    void insertAtEnd(string value) {
+        Node* newNode = new Node(value);
+        if (head == nullptr) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail->next = newNode;
+            newNode->prev = tail;
+            tail = newNode;
+        }
+    }
+
+    void displayForward() {
+        cout << "Forward traversal:" << endl;
+        Node* temp = head;
+        while (temp != nullptr) {
+            cout << temp->ip;
+            if (temp->next != nullptr)
+                cout << " -> ";
+            temp = temp->next;
+        }
+        cout << endl;
+    }
+
+    void displayBackward() {
+        cout << "Backward traversal:" << endl;
+        Node* temp = tail;
+        while (temp != nullptr) {
+            cout << temp->ip;
+            if (temp->prev != nullptr)
+                cout << " -> ";
+            temp = temp->prev;
+        }
+        cout << endl;
+    }
+
+    void freeList() {
+        Node* temp = head;
+        while (temp != nullptr) {
+            Node* nextNode = temp->next;
+            delete temp;
+            temp = nextNode;
+        }
+        head = nullptr;
+        tail = nullptr;
+    }
+};
+
+int main() {
+    ifstream file("ips.txt");
+    if (!file.is_open()) {
+        cout << "Error: Could not open file." << endl;
+        return 1;
+    }
+
+    DoubleLL dll;
+    string line;
+    string ip = "";
+
+    while (getline(file, line)) {
+        for (int i = 0; i < line.length(); i++) {
+            if (line[i] == ',') {
+                dll.insertAtEnd(ip);
+                ip = "";
+            } else {
+                ip += line[i];
+            }
+        }
+        if (!ip.empty()) {
+            dll.insertAtEnd(ip);
+        }
+    }
+
+    file.close();
+    dll.displayForward();
+    dll.displayBackward();
+    dll.freeList();
+    return 0;
+}
