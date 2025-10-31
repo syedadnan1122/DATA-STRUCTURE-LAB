@@ -79,7 +79,7 @@ public:
         }
     }
 
-    bool deleteFromBeginning(int* removedID) {
+    bool deleteFromBeginning() {
         if (head == nullptr) {
             return false;
         }
@@ -90,9 +90,7 @@ public:
             head = head->next;
             head->prev = nullptr;
         }
-        if (removedID != nullptr) {
-            *removedID = temp->patientID;
-        }
+        cout<<"Patient Ended"<<temp->patientID;
         delete temp;
         return true;
     }
@@ -151,8 +149,7 @@ int choice, id, pos, removed;
                 list.display();
                 break;
             case 4:
-                if (list.deleteFromBeginning(&removed)) {
-                    cout << "Patient " << removed << " treated and removed.\n";
+                if (list.deleteFromBeginning()) {
                 } else {
                     cout << "No patients to remove.\n";
                 }
