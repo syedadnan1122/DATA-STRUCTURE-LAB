@@ -332,7 +332,7 @@ This project demonstrates understanding of:
 Institute of Management Sciences, Peshawar  
 Data Structures Lab - Final Exam Paper 3rd symester
 
-📧 Email: [syed1adna1@gmail.com](mailto:syed1adna1@gmail.com)
+📧 Email: [syed1adnan1@gmail.com](mailto:syed1adna1@gmail.com)
 🔗 GitHub: [@syedadnan1122](https://github.com/syedadnan1122)
 
 ---
