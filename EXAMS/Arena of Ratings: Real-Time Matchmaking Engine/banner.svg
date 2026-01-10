@@ -1,0 +1,209 @@
+<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f3ff;stop-opacity:1">
+        <animate attributeName="offset" values="0;0.3;0" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#ff00e5;stop-opacity:1">
+        <animate attributeName="offset" values="0.5;0.7;0.5" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#ffaa00;stop-opacity:1">
+        <animate attributeName="offset" values="1;0.8;1" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="glowCircle1">
+      <stop offset="0%" style="stop-color:#00f3ff;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#00f3ff;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="glowCircle2">
+      <stop offset="0%" style="stop-color:#ff00e5;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ff00e5;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Animated Glow Orbs -->
+  <circle cx="150" cy="100" r="180" fill="url(#glowCircle1)">
+    <animate attributeName="r" values="180;220;180" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="1050" cy="300" r="200" fill="url(#glowCircle2)">
+    <animate attributeName="r" values="200;240;200" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Floating Particles -->
+  <circle cx="200" cy="50" r="2" fill="#00f3ff" opacity="0.6">
+    <animate attributeName="cy" values="50;350" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="80" r="2" fill="#ff00e5" opacity="0.6">
+    <animate attributeName="cy" values="80;380" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.6;0" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="800" cy="60" r="2" fill="#ffaa00" opacity="0.6">
+    <animate attributeName="cy" values="60;360" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.6;0" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1000" cy="40" r="2" fill="#00f3ff" opacity="0.6">
+    <animate attributeName="cy" values="40;340" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.6;0" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Rotating Ring -->
+  <g transform="translate(600, 80)">
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#00f3ff" stroke-width="2" opacity="0.3" stroke-dasharray="10 5">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#ff00e5" stroke-width="2" opacity="0.3" stroke-dasharray="5 10">
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Icon -->
+  <text x="600" y="95" font-size="50" fill="#00f3ff" text-anchor="middle" filter="url(#glow)">⚔️
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Main Title -->
+  <text x="600" y="160" font-family="Arial, sans-serif" font-size="56" font-weight="bold" 
+        fill="url(#textGrad)" text-anchor="middle" filter="url(#glow)">
+    ARENA OF RATINGS
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="195" font-family="Arial, sans-serif" font-size="20" 
+        fill="#00f3ff" text-anchor="middle" letter-spacing="8">
+    BINARY SEARCH TREE
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- BST Visualization -->
+  <g transform="translate(600, 240)">
+    <!-- Root -->
+    <rect x="-35" y="0" width="70" height="40" rx="6" 
+          fill="rgba(0,243,255,0.2)" stroke="#00f3ff" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="0" y="27" font-family="monospace" font-size="20" font-weight="bold"
+          fill="#fff" text-anchor="middle">50</text>
+    
+    <!-- Lines to children -->
+    <line x1="0" y1="40" x2="-80" y2="70" stroke="#ff00e5" stroke-width="2" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="40" x2="80" y2="70" stroke="#ff00e5" stroke-width="2" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Left Child -->
+    <rect x="-115" y="70" width="70" height="40" rx="6" 
+          fill="rgba(255,0,229,0.2)" stroke="#ff00e5" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="-80" y="97" font-family="monospace" font-size="20" font-weight="bold"
+          fill="#fff" text-anchor="middle">30</text>
+    
+    <!-- Right Child -->
+    <rect x="45" y="70" width="70" height="40" rx="6" 
+          fill="rgba(255,0,229,0.2)" stroke="#ff00e5" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="80" y="97" font-family="monospace" font-size="20" font-weight="bold"
+          fill="#fff" text-anchor="middle">70</text>
+    
+    <!-- Leaf nodes indicators -->
+    <circle cx="-130" cy="130" r="4" fill="#ffaa00">
+      <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-30" cy="130" r="4" fill="#ffaa00">
+      <animate attributeName="r" values="3;5;3" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="30" cy="130" r="4" fill="#ffaa00">
+      <animate attributeName="r" values="3;5;3" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="130" cy="130" r="4" fill="#ffaa00">
+      <animate attributeName="r" values="3;5;3" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Stats Badges -->
+  <g transform="translate(80, 330)">
+    <rect width="140" height="50" rx="8" fill="rgba(0,243,255,0.1)" stroke="#00f3ff" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="70" y="25" font-size="22" font-weight="bold" fill="#00f3ff" text-anchor="middle">O(log n)</text>
+    <text x="70" y="40" font-size="9" fill="#808080" text-anchor="middle">AVG TIME</text>
+  </g>
+  
+  <g transform="translate(260, 330)">
+    <rect width="140" height="50" rx="8" fill="rgba(255,0,229,0.1)" stroke="#ff00e5" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3.2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="70" y="25" font-size="22" font-weight="bold" fill="#ff00e5" text-anchor="middle">15+ CMD</text>
+    <text x="70" y="40" font-size="9" fill="#808080" text-anchor="middle">COMMANDS</text>
+  </g>
+  
+  <g transform="translate(440, 330)">
+    <rect width="140" height="50" rx="8" fill="rgba(255,170,0,0.1)" stroke="#ffaa00" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3.4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="70" y="25" font-size="22" font-weight="bold" fill="#ffaa00" text-anchor="middle">100%</text>
+    <text x="70" y="40" font-size="9" fill="#808080" text-anchor="middle">POINTERS</text>
+  </g>
+  
+  <g transform="translate(620, 330)">
+    <rect width="140" height="50" rx="8" fill="rgba(0,243,255,0.1)" stroke="#00f3ff" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3.6s" repeatCount="indefinite"/>
+    </rect>
+    <text x="70" y="25" font-size="20" font-weight="bold" fill="#00f3ff" text-anchor="middle">NO STL</text>
+    <text x="70" y="40" font-size="9" fill="#808080" text-anchor="middle">MAP/SET FREE</text>
+  </g>
+  
+  <g transform="translate(800, 330)">
+    <rect width="140" height="50" rx="8" fill="rgba(255,0,229,0.1)" stroke="#ff00e5" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="70" y="25" font-size="22" font-weight="bold" fill="#ff00e5" text-anchor="middle">C++</text>
+    <text x="70" y="40" font-size="9" fill="#808080" text-anchor="middle">PURE BST</text>
+  </g>
+  
+  <g transform="translate(980, 330)">
+    <rect width="140" height="50" rx="8" fill="rgba(255,170,0,0.1)" stroke="#ffaa00" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="70" y="25" font-size="20" font-weight="bold" fill="#ffaa00" text-anchor="middle">DS LAB</text>
+    <text x="70" y="40" font-size="9" fill="#808080" text-anchor="middle">FINAL EXAM</text>
+  </g>
+  
+  <!-- Corner Icons -->
+  <text x="30" y="40" font-size="30" opacity="0.3">🎯
+    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
+  </text>
+  <text x="1150" y="40" font-size="30" opacity="0.3">📊
+    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.5s" repeatCount="indefinite"/>
+  </text>
+</svg>
