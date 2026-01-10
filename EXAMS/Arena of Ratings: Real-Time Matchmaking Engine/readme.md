@@ -223,7 +223,7 @@ LEAVES 1
 
 ## 👨‍💻 Author
 
-**Your Name**  
+**Syed Adnan Saeed **  
 Data Structures Lab - Final Exam Project
 
 ---
