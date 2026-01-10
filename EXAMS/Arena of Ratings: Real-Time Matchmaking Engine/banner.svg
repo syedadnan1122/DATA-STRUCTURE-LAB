@@ -1,0 +1,403 @@
+<svg viewBox="0 0 1200 1800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1f3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <animate attributeName="x1" values="0%;100%;0%" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="0%;100%;0%" dur="10s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f3ff;stop-opacity:1">
+        <animate attributeName="stop-color" values="#00f3ff;#ff00e5;#00f3ff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#ff00e5;stop-opacity:1">
+        <animate attributeName="stop-color" values="#ff00e5;#ffaa00;#ff00e5" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#00f3ff;stop-opacity:1">
+        <animate attributeName="stop-color" values="#00f3ff;#ff00e5;#00f3ff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e2747;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#2a3154;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <!-- Minimal glow for backgrounds only -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Animated gradients for nodes -->
+    <radialGradient id="nodeGrad1">
+      <stop offset="0%" style="stop-color:#00f3ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0066ff;stop-opacity:1"/>
+    </radialGradient>
+    
+    <radialGradient id="nodeGrad2">
+      <stop offset="0%" style="stop-color:#ff00e5;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#aa0088;stop-opacity:1"/>
+    </radialGradient>
+    
+    <radialGradient id="nodeGrad3">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#00aa66;stop-opacity:1"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Animated Background -->
+  <rect width="1200" height="1800" fill="url(#bgGrad)"/>
+  
+  <!-- Animated Grid Pattern -->
+  <g opacity="0.1">
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00f3ff" stroke-width="1" stroke-dasharray="10,10">
+      <animate attributeName="y1" values="0;1800;0" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="0;1800;0" dur="20s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#ff00e5" stroke-width="1" stroke-dasharray="10,10">
+      <animate attributeName="y1" values="400;2200;400" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="400;2200;400" dur="25s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Enhanced Animated Stars -->
+  <g id="stars">
+    <circle cx="100" cy="100" r="2" fill="#fff" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="150" r="1.5" fill="#00f3ff" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="200" r="2" fill="#ff00e5" opacity="0.7">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="300" r="1.5" fill="#fff" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="500" r="2" fill="#00ff88" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Title Section - NO BLUR -->
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="url(#titleGrad)" text-anchor="middle">
+    <tspan>ARENA OF RATINGS</tspan>
+    <animateTransform attributeName="transform" type="scale" values="1,1;1.03,1.03;1,1" dur="3s" repeatCount="indefinite" additive="sum"/>
+  </text>
+  
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="22" fill="#00f3ff" text-anchor="middle" opacity="0.9">
+    <tspan>⚡ BST-Powered Elite Matchmaking System ⚡</tspan>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Animated BST Visualization - CRISP TEXT -->
+  <g transform="translate(600, 240)">
+    <!-- Animated connection lines -->
+    <g opacity="0.7">
+      <line x1="0" y1="35" x2="-140" y2="95" stroke="#00f3ff" stroke-width="2.5">
+        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="35" x2="140" y2="95" stroke="#ff00e5" stroke-width="2.5">
+        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </line>
+      <line x1="-140" y1="130" x2="-200" y2="185" stroke="#00f3ff" stroke-width="2">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="0.2s"/>
+      </line>
+      <line x1="-140" y1="130" x2="-80" y2="185" stroke="#00f3ff" stroke-width="2">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+      </line>
+      <line x1="140" y1="130" x2="80" y2="185" stroke="#ff00e5" stroke-width="2">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+      </line>
+      <line x1="140" y1="130" x2="200" y2="185" stroke="#ff00e5" stroke-width="2">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="0.8s"/>
+      </line>
+    </g>
+    
+    <!-- Root node - Rating 100 - CLEAR TEXT -->
+    <g>
+      <circle cx="0" cy="0" r="40" fill="url(#nodeGrad1)" stroke="#00f3ff" stroke-width="3">
+        <animate attributeName="r" values="38;42;38" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#00f3ff" stroke-width="1.5" opacity="0.3">
+        <animate attributeName="r" values="45;52;45" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="-8" font-family="monospace" font-size="17" fill="#fff" text-anchor="middle" font-weight="bold">100</text>
+      <text x="0" y="8" font-family="Arial, sans-serif" font-size="13" fill="#00f3ff" text-anchor="middle" font-weight="bold">Alice</text>
+      <text x="0" y="23" font-family="monospace" font-size="10" fill="#0f0" text-anchor="middle">HP:1000</text>
+    </g>
+    
+    <!-- Left subtree - Rating 50 -->
+    <g>
+      <circle cx="-140" cy="100" r="35" fill="url(#nodeGrad1)" stroke="#00f3ff" stroke-width="2.5">
+        <animate attributeName="r" values="33;37;33" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </circle>
+      <text x="-140" y="92" font-family="monospace" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">50</text>
+      <text x="-140" y="107" font-family="Arial, sans-serif" font-size="12" fill="#00f3ff" text-anchor="middle" font-weight="bold">Bob</text>
+      <text x="-140" y="120" font-family="monospace" font-size="9" fill="#0f0" text-anchor="middle">HP:800</text>
+    </g>
+    
+    <!-- Right subtree - Rating 150 -->
+    <g>
+      <circle cx="140" cy="100" r="35" fill="url(#nodeGrad2)" stroke="#ff00e5" stroke-width="2.5">
+        <animate attributeName="r" values="33;37;33" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+      </circle>
+      <text x="140" y="92" font-family="monospace" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">150</text>
+      <text x="140" y="107" font-family="Arial, sans-serif" font-size="12" fill="#ff00e5" text-anchor="middle" font-weight="bold">Carol</text>
+      <text x="140" y="120" font-family="monospace" font-size="9" fill="#0f0" text-anchor="middle">HP:950</text>
+    </g>
+    
+    <!-- Leaf nodes -->
+    <g>
+      <circle cx="-200" cy="190" r="28" fill="url(#nodeGrad3)" stroke="#00ff88" stroke-width="2">
+        <animate attributeName="r" values="26;30;26" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+      </circle>
+      <text x="-200" y="186" font-family="monospace" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">25</text>
+      <text x="-200" y="200" font-family="Arial, sans-serif" font-size="11" fill="#00ff88" text-anchor="middle">Dan</text>
+    </g>
+    
+    <g>
+      <circle cx="-80" cy="190" r="28" fill="url(#nodeGrad3)" stroke="#00ff88" stroke-width="2">
+        <animate attributeName="r" values="26;30;26" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+      </circle>
+      <text x="-80" y="186" font-family="monospace" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">75</text>
+      <text x="-80" y="200" font-family="Arial, sans-serif" font-size="11" fill="#00ff88" text-anchor="middle">Eve</text>
+    </g>
+    
+    <g>
+      <circle cx="80" cy="190" r="28" fill="url(#nodeGrad2)" stroke="#ffaa00" stroke-width="2">
+        <animate attributeName="r" values="26;30;26" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      </circle>
+      <text x="80" y="186" font-family="monospace" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">125</text>
+      <text x="80" y="200" font-family="Arial, sans-serif" font-size="11" fill="#ffaa00" text-anchor="middle">Fay</text>
+    </g>
+    
+    <g>
+      <circle cx="200" cy="190" r="28" fill="url(#nodeGrad2)" stroke="#ffaa00" stroke-width="2">
+        <animate attributeName="r" values="26;30;26" dur="2s" repeatCount="indefinite" begin="1.8s"/>
+      </circle>
+      <text x="200" y="186" font-family="monospace" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">200</text>
+      <text x="200" y="200" font-family="Arial, sans-serif" font-size="11" fill="#ffaa00" text-anchor="middle">Gus</text>
+    </g>
+    
+    <!-- Data flow particles -->
+    <circle r="3" fill="#00f3ff" opacity="0.9">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 0,35 L -140,95"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3" fill="#ff00e5" opacity="0.9">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 0,35 L 140,95" begin="0.5s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+  </g>
+  
+  <!-- How to Play Section -->
+  <rect x="50" y="540" width="1100" height="55" fill="url(#cardGrad)" rx="12" opacity="0.9" stroke="#00f3ff" stroke-width="2">
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <text x="600" y="577" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#00f3ff" text-anchor="middle">
+    🎮 COMMAND REFERENCE
+  </text>
+  
+  <!-- Command Cards - CRISP TEXT -->
+  
+  <!-- Card 1: Join -->
+  <g transform="translate(80, 625)">
+    <rect width="320" height="160" fill="url(#cardGrad)" rx="10" stroke="#00f3ff" stroke-width="2.5">
+      <animate attributeName="stroke-width" values="2;3;2" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="160" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#00f3ff" text-anchor="middle">
+      ⚔️ JOIN THE ARENA
+    </text>
+    <text x="25" y="70" font-family="monospace" font-size="16" fill="#fff" font-weight="bold">
+      JOIN 100 Alice 1000
+    </text>
+    <rect x="20" y="54" width="280" height="26" fill="none" stroke="#00f3ff" stroke-width="1" rx="3" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="25" y="100" font-family="Arial, sans-serif" font-size="13" fill="#ccc">
+      <tspan x="25" dy="0">➜ Rating: 100</tspan>
+      <tspan x="25" dy="20">➜ Name: Alice</tspan>
+      <tspan x="25" dy="20">➜ Health: 1000 HP</tspan>
+    </text>
+    <g transform="translate(270, 80)">
+      <circle r="20" fill="none" stroke="#00f3ff" stroke-width="2">
+        <animate attributeName="r" values="18;23;18" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M -8,-3 L -3,3 L 8,-8" stroke="#00f3ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+  
+  <!-- Card 2: Battle -->
+  <g transform="translate(440, 625)">
+    <rect width="320" height="160" fill="url(#cardGrad)" rx="10" stroke="#ff00e5" stroke-width="2.5">
+      <animate attributeName="stroke-width" values="2;3;2" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <text x="160" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff00e5" text-anchor="middle">
+      💥 BATTLE SYSTEM
+    </text>
+    <text x="25" y="70" font-family="monospace" font-size="16" fill="#fff" font-weight="bold">
+      DAMAGE 100 200
+    </text>
+    <text x="25" y="100" font-family="monospace" font-size="16" fill="#fff" font-weight="bold">
+      HEAL 100 150
+    </text>
+    <text x="25" y="130" font-family="Arial, sans-serif" font-size="13" fill="#ccc">
+      Attack enemies or restore HP
+    </text>
+    <g transform="translate(250, 90)">
+      <path d="M 0,-15 L 10,0 L 0,15 Z" fill="#ff00e5">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 15,0; 0,0" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <circle cx="25" cy="0" r="8" fill="none" stroke="#ff00e5" stroke-width="2">
+        <animate attributeName="r" values="8;14;8" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Card 3: Search -->
+  <g transform="translate(800, 625)">
+    <rect width="320" height="160" fill="url(#cardGrad)" rx="10" stroke="#ffaa00" stroke-width="2.5">
+      <animate attributeName="stroke-width" values="2;3;2" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <text x="160" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffaa00" text-anchor="middle">
+      🔍 FIND PLAYERS
+    </text>
+    <text x="25" y="67" font-family="monospace" font-size="14" fill="#fff">
+      <tspan x="25" dy="0">NEXT 100 → Higher rated</tspan>
+      <tspan x="25" dy="25">PREV 100 → Lower rated</tspan>
+      <tspan x="25" dy="25">MATCH 100 → Closest</tspan>
+    </text>
+    <g transform="translate(270, 90)">
+      <circle r="5" fill="#ffaa00">
+        <animate attributeName="cy" values="-30;30;-30" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="-30" r="8" fill="none" stroke="#ffaa00" stroke-width="2" opacity="0.4"/>
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#ffaa00" stroke-width="2" opacity="0.4"/>
+      <circle cx="0" cy="30" r="8" fill="none" stroke="#ffaa00" stroke-width="2" opacity="0.4"/>
+    </g>
+  </g>
+  
+  <!-- Card 4: Rankings -->
+  <g transform="translate(80, 815)">
+    <rect width="320" height="160" fill="url(#cardGrad)" rx="10" stroke="#00ff88" stroke-width="2.5">
+      <animate attributeName="stroke-width" values="2;3;2" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <text x="160" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#00ff88" text-anchor="middle">
+      🏆 LEADERBOARD
+    </text>
+    <text x="25" y="67" font-family="monospace" font-size="14" fill="#fff">
+      <tspan x="25" dy="0">RANK 100 → Get position</tspan>
+      <tspan x="25" dy="25">KTH 3 → Find 3rd player</tspan>
+      <tspan x="25" dy="25">RANGE 50 150 → List all</tspan>
+    </text>
+    <g transform="translate(240, 70)">
+      <rect x="0" y="0" width="20" height="60" fill="#00ff88" opacity="0.7" rx="2">
+        <animate attributeName="height" values="60;35;60" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="0;25;0" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="25" y="20" width="20" height="40" fill="#00ff88" opacity="0.5" rx="2">
+        <animate attributeName="height" values="40;25;40" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+        <animate attributeName="y" values="20;35;20" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </rect>
+      <rect x="50" y="35" width="20" height="25" fill="#00ff88" opacity="0.3" rx="2">
+        <animate attributeName="height" values="25;15;25" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+        <animate attributeName="y" values="35;45;35" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+      </rect>
+    </g>
+  </g>
+  
+  <!-- Card 5: Stats -->
+  <g transform="translate(440, 815)">
+    <rect width="320" height="160" fill="url(#cardGrad)" rx="10" stroke="#ff6600" stroke-width="2.5">
+      <animate attributeName="stroke-width" values="2;3;2" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <text x="160" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff6600" text-anchor="middle">
+      📊 TREE ANALYTICS
+    </text>
+    <text x="25" y="70" font-family="monospace" font-size="17" fill="#fff" font-weight="bold">
+      STATS
+    </text>
+    <text x="25" y="98" font-family="Arial, sans-serif" font-size="13" fill="#ccc">
+      <tspan x="25" dy="0">• Total Players Count</tspan>
+      <tspan x="25" dy="19">• Min/Max Ratings</tspan>
+      <tspan x="25" dy="19">• Tree Height & Leaves</tspan>
+    </text>
+    <g transform="translate(260, 100)">
+      <circle r="25" fill="none" stroke="#ff6600" stroke-width="2" stroke-dasharray="5,5">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="15" fill="none" stroke="#ff6600" stroke-width="1.5" opacity="0.5">
+        <animate attributeName="r" values="15;22;15" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Card 6: Duel -->
+  <g transform="translate(800, 815)">
+    <rect width="320" height="160" fill="url(#cardGrad)" rx="10" stroke="#aa00ff" stroke-width="2.5">
+      <animate attributeName="stroke-width" values="2;3;2" dur="3s" repeatCount="indefinite" begin="2.5s"/>
+    </rect>
+    <text x="160" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#aa00ff" text-anchor="middle">
+      ⚡ PATH DISTANCE
+    </text>
+    <text x="25" y="70" font-family="monospace" font-size="17" fill="#fff" font-weight="bold">
+      DUEL 50 150
+    </text>
+    <text x="25" y="102" font-family="Arial, sans-serif" font-size="13" fill="#ccc">
+      <tspan x="25" dy="0">Calculate the number of</tspan>
+      <tspan x="25" dy="19">edges between two players</tspan>
+      <tspan x="25" dy="19">in the BST structure</tspan>
+    </text>
+    <g transform="translate(220, 95)">
+      <line x1="0" y1="0" x2="60" y2="0" stroke="#aa00ff" stroke-width="2.5" stroke-dasharray="8,4">
+        <animate attributeName="stroke-dashoffset" from="0" to="12" dur="1.2s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="0" cy="0" r="6" fill="#aa00ff"/>
+      <circle cx="60" cy="0" r="6" fill="#aa00ff"/>
+      <circle cx="0" cy="0" r="11" fill="none" stroke="#aa00ff" stroke-width="1.5">
+        <animate attributeName="r" values="11;16;11" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Interactive Demo Section -->
+  <rect x="50" y="1005" width="1100" height="55" fill="url(#cardGrad)" rx="12" opacity="0.9" stroke="#00f3ff" stroke-width="2">
+    <animate attributeName="opacity" values="0.85;0.95;0.85" dur="3s" repeatCount="indefinite" begin="1s"/>
+  </rect>
+  <text x="600" y="1042" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#00f3ff" text-anchor="middle">
+    📝 LIVE DEMO SESSION
+  </text>
+  
+  <!-- Enhanced Terminal - PERFECTLY CLEAR TEXT -->
+  <g transform="translate(100, 1090)">
+    <rect width="1000" height="580" fill="#0a0e1f" rx="12" stroke="#00f3ff" stroke-width="2.5" filter="url(#softGlow)"/>
+    
+    <!-- Terminal header bar -->
+    <rect width="1000" height="45" fill="#1a1f3a" rx="12"/>
+    <circle cx="22" cy="22" r="7" fill="#ff5555">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="45" cy="22" r="7" fill="#ffaa00">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="68" cy="22" r="7" fill="#00ff88">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <text x="500" y="29" font-family="monospace" font-size="15" fill="#888" text-anchor="middle" font-weight="bold">
+      arena@bst-terminal:~$ Arena of Ratings
+    </text>
+    
+    <!-- Terminal content -
