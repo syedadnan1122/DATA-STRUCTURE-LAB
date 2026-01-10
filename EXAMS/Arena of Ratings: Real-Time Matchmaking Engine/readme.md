@@ -329,10 +329,10 @@ This project demonstrates understanding of:
 ## 👨‍💻 Author
 
 **Syed Adnan Saeed**  
-Fast NUCES Peshawar  
+Institute of Management Sciences, Peshawar  
 Data Structures Lab - Final Exam Paper 3rd symester
 
-📧 Email: [your.email@example.com](syed1adnan1.com)  
+📧 Email: [syed1adna1@gmail.com](mailto:syed1adna1@gmail.com)
 🔗 GitHub: [@syedadnan1122](https://github.com/syedadnan1122)
 
 ---
@@ -346,7 +346,7 @@ This project is part of academic coursework and is available for educational pur
 ## 🙏 Acknowledgments
 
 - Course Instructor: [SYED SHAYAN ALI]
-- Data Structures Lab - Fast NUCES Peshawar
+- Data Structures Lab - Institute of Management Sciences, Peshawar
 - C++ Reference Documentation
 - Binary Search Tree algorithms and concepts
 
