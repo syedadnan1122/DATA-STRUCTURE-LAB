@@ -330,9 +330,9 @@ This project demonstrates understanding of:
 
 **Syed Adnan Saeed**  
 Fast NUCES Peshawar  
-Data Structures Lab - Final Exam Project
+Data Structures Lab - Final Exam Paper 3rd symester
 
-📧 Email: [your.email@example.com](mailto:your.email@example.com)  
+📧 Email: [your.email@example.com](syed1adnan1.com)  
 🔗 GitHub: [@syedadnan1122](https://github.com/syedadnan1122)
 
 ---
@@ -345,7 +345,7 @@ This project is part of academic coursework and is available for educational pur
 
 ## 🙏 Acknowledgments
 
-- Course Instructor: [Instructor Name]
+- Course Instructor: [SYED SHAYAN ALI]
 - Data Structures Lab - Fast NUCES Peshawar
 - C++ Reference Documentation
 - Binary Search Tree algorithms and concepts
